@@ -9,12 +9,13 @@ dy_prompt_prefix_1=" on %{$fg[magenta]%}"
 dy_prompt_prefix_2="%{$fg_bold[white]%}[%{$reset_color%}%{$fg_bold[blue]%}"
 
 PROMPT_BRACKET_BEGIN='%{$fg_bold[white]%}['
-PROMPT_HOST='%{$fg_bold[cyan]%}%m'
+PROMPT_HOST='%{$fg_bold[green]%}%m'
 PROMPT_SEPARATOR='%{$reset_color%}:'
 PROMPT_DIR='%{$fg_bold[yellow]%}%c'
+PROMPT_TIME='%{$fg[green]%}[%*]'
 PROMPT_BRACKET_END='%{$fg_bold[white]%}]'
 
-PROMPT_USER='%{$fg_bold[blue]%}%n'
+PROMPT_USER='%{$fg_bold[red]%}%n'
 PROMPT_SIGN='%{$reset_color%}%#'
 
 # Git info & short sha
@@ -22,7 +23,7 @@ GIT_PROMPT_INFO='$(git_prompt_info)'
 GIT_PROMPT_SHA='$(git_prompt_short_sha)'
 
 # ZSH theme global variable.
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{$fg_bold[red]%}("
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{$fg_bold[cyan]%}("
 ZSH_THEME_GIT_PROMPT_SHA_AFTER=")%{$reset_color%}%{$fg_bold[white]%}]%{$reset_color%} "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="$dy_prompt_prefix_2"
@@ -37,7 +38,7 @@ PROMPT_1="
 %{$terminfo[bold]$fg[yellow]%}${CURRENT_DIR}%{$reset_color%}\
 ${GIT_PROMPT_INFO}\
 ${GIT_PROMPT_SHA}\
-%{$fg[white]%}[%*]
+${PROMPT_TIME}
 %${RET_STATUS}%{$reset_color%}"
 
 # Prompt format: [host:current_dir] (git_prompt_info) \n [username]%
