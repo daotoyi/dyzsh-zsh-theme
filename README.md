@@ -22,7 +22,7 @@ Based on astro theme.
 ```
 
 ### Config
-- Lacate the position
+- Locate the position
 
 ```bash
   cp dyzsh-zsh-theme/dyzsh.zsh-theme ~/.oh-my-zsh/themes
