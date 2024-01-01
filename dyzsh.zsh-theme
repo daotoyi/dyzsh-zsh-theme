@@ -12,10 +12,10 @@ PROMPT_BRACKET_BEGIN='%{$fg_bold[white]%}['
 PROMPT_HOST='%{$fg_bold[green]%}%m'
 PROMPT_SEPARATOR='%{$reset_color%}:'
 PROMPT_DIR='%{$fg_bold[yellow]%}%c'
-PROMPT_TIME='%{$fg[green]%}[%*]'
+PROMPT_TIME='%{$fg[magenta]%}(%*)'
 PROMPT_BRACKET_END='%{$fg_bold[white]%}]'
 
-PROMPT_USER='%{$fg_bold[red]%}%n'
+PROMPT_USER='%{$fg_bold[blue]%}%n'
 PROMPT_SIGN='%{$reset_color%}%#'
 
 # Git info & short sha
@@ -41,9 +41,18 @@ ${GIT_PROMPT_SHA}\
 ${PROMPT_TIME}
 %${RET_STATUS}%{$reset_color%}"
 
+# Prompt format: \n [HOST@USER] [TIME] [GIT_BRANCH STATE GIT_SHA] DIRECTORY \n ➜
+PROMPT_2="
+[${PROMPT_HOST}%{$reset_color%}@${PROMPT_USER}%{$reset_color%}]\
+${PROMPT_TIME}\
+${GIT_PROMPT_INFO}\
+${GIT_PROMPT_SHA}\
+%{$terminfo[bold]$fg[yellow]%}${CURRENT_DIR}%{$reset_color%}
+%${RET_STATUS}%{$reset_color%}"
+
 # Prompt format: [host:current_dir] (git_prompt_info) \n [username]%
-PROMPT_2="${PROMPT_BRACKET_BEGIN}${PROMPT_HOST}${PROMPT_SEPARATOR}${PROMPT_DIR}${PROMPT_BRACKET_END}${GIT_PROMPT_INFO}
+PROMPT_3="${PROMPT_BRACKET_BEGIN}${PROMPT_HOST}${PROMPT_SEPARATOR}${PROMPT_DIR}${PROMPT_BRACKET_END}${GIT_PROMPT_INFO}
 ${PROMPT_BRACKET_BEGIN}${PROMPT_USER}${PROMPT_BRACKET_END}${PROMPT_SIGN} "
 
 # Prompt
-PROMPT=${PROMPT_1}
+PROMPT=${PROMPT_2}
