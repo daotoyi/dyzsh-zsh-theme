@@ -16,6 +16,19 @@ Based on astro theme.
 
 ## Install
 
+### zsh
+```bash
+  apt install zsh
+  dnf install zsh
+  pacman -S zsh
+
+  chsh -s /bin/zsh
+  # /etc/passwd: modify /bin/zsh
+ ```
+### oh-my-zsh
+```bash
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+```
 ### Clone
 ```bash
   git clone https://github.com/daotoyi/dyzsh-zsh-theme.git 
